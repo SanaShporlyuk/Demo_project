@@ -1,4 +1,6 @@
-class LoginPage {
+import BasePage from "../base/basePage.js"
+
+class LoginPage extends BasePage {
     get emailInput() {
         return $('#email');
     }
@@ -16,7 +18,7 @@ class LoginPage {
     }
 
     async open() {
-        await browser.url(`${browser.options.baseUrl}/#/login`);
+        await super.open('login');
     }
 
     async login(email, password) {

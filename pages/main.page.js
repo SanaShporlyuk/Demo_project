@@ -1,4 +1,6 @@
-class MainPage {
+import BasePage from "../base/basePage.js"
+
+class MainPage extends BasePage {
     get accountMenuBtn() {
         return $('#navbarAccount');
     }
@@ -6,14 +8,10 @@ class MainPage {
     get loginBtn() {
         return $('#navbarLoginButton');
     }
- 
-    get closePopupBtn() {
-        return $('button.close-dialog');
-    }
 
     async open() {
-        await browser.url(`${browser.options.baseUrl}`);
-        await this.closePopupBtn.click();
+        await super.open('');
+        await super.closePopupBtn.click();
     }
 
     async openAccountMenu() {
