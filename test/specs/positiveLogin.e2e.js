@@ -9,7 +9,7 @@ describe('User login', () => {
         await mainPage.navigateToLogin();  
 
         // login page
-        await loginPage.login('sanasmitrc@gmail.com', 'Done_demo@');
+        await loginPage.login('sanasmitrc@gmail.com', 'test123');
         await browser.pause(1000);
         
         await mainPage.openAccountMenu();

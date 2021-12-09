@@ -1,12 +1,13 @@
 import BasePage from "../base/basePage.js"
+import Button from "../elements/button.js";
 
 class MainPage extends BasePage {
     get accountMenuBtn() {
-        return $('#navbarAccount');
+        return new Button($('#navbarAccount'), "Account menu");
     }
 
     get loginBtn() {
-        return $('#navbarLoginButton');
+        return new Button ($('#navbarLoginButton'), "Loggin button");
     }
 
     async open() {
