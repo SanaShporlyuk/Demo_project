@@ -1,16 +1,18 @@
-import BasePage from "../base/basePage.js"
+import BasePage from '../base/basePage.js'
+import Button from '../elements/button.js'
+import Input from '../elements/input.js'
 
 class LoginPage extends BasePage {
     get emailInput() {
-        return $('#email');
+        return new Input($('#email'), 'Email input');
     }
 
     get passwordInput() {
-        return $('#password');
+        return new Input($('#password'), 'Password input');
     }
 
     get loginBtn() {
-        return $('#loginButton');
+        return new Button($('#loginButton'), 'Login button');
     }
 
     get error() {

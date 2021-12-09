@@ -1,24 +1,25 @@
-import BasePage from "../base/basePage.js"
+import BasePage from '../base/basePage.js'
+import Button from '../elements/button.js'
 
 class AboutPage extends BasePage {
     get twitterBtn() {
-        return $('//a[contains(@aria-label,"Twitter")]');
+        return new Button($('//a[contains(@aria-label,"Twitter")]'), 'Twitter button');
     }
 
     get facebookBtn() {
-        return $('//a[contains(@aria-label,"Facebook")]');
+        return new Button($('//a[contains(@aria-label,"Facebook")]'), 'Facebook button');
     }
 
     get slackBtn() {
-        return $('//a[contains(@aria-label,"Slack")]');
+        return new Button($('//a[contains(@aria-label,"Slack")]'), 'Slack button');
     }
-    
+
     get redditBtn() {
-        return $('//a[contains(@aria-label,"Reddit")]');
+        return new Button($('//a[contains(@aria-label,"Reddit")]'), 'Reddit button');
     }
 
     get presskitBtn() {
-        return $('//a[contains(@aria-label,"PressKit")]');
+        return new Button($('//a[contains(@aria-label,"PressKit")]'), 'PressKit button');
     }
 
     async open() {
@@ -40,15 +41,15 @@ class AboutPage extends BasePage {
         await this.slackBtn.click();
         await browser.switchWindow('slack');
     }
-    
+
     async openReddit() {
         await this.redditBtn.click();
-        await browser.switchWindow('reddit');        
+        await browser.switchWindow('reddit');
     }
 
     async openPresskit() {
         await this.presskitBtn.click();
-        await browser.switchWindow('github'); 
+        await browser.switchWindow('github');
     }
 }
 
