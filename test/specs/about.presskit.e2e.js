@@ -1,4 +1,3 @@
-//  //strong[@itemprop="name"]
 import aboutPage from "../../pages/about.page.js"
 
 describe('SideMenu/AboutUs', () => {
