@@ -3,6 +3,10 @@ import Button from '../elements/button.js'
 import Input from '../elements/input.js'
 
 class LoginPage extends BasePage {
+    get baseElem() {
+        return this.loginBtn;
+    }
+
     get emailInput() {
         return new Input($('#email'), 'Email input');
     }

@@ -2,6 +2,10 @@ import BasePage from '../base/basePage.js'
 import Button from '../elements/button.js'
 
 class MainPage extends BasePage {
+    get baseElem() {
+        return this.accountMenuBtn;
+    }
+
     get accountMenuBtn() {
         return new Button($('#navbarAccount'), 'Account menu');
     }
@@ -12,7 +16,6 @@ class MainPage extends BasePage {
 
     async open() {
         await super.open('');
-        await super.closePopupBtn.click();
     }
 
     async openAccountMenu() {

@@ -6,7 +6,6 @@ describe('SideMenu/AboutUs', () => {
         await aboutPage.open();
 
         await aboutPage.openSlack();
-        await browser.pause(3000);
 
         await expect(await browser.getUrl()).toMatch('https://owasp.org/slack/invite');
         

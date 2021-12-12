@@ -2,6 +2,10 @@ import BasePage from '../base/basePage.js'
 import Button from '../elements/button.js'
 
 class AboutPage extends BasePage {
+    get baseElem() {
+        return this.presskitBtn;
+    }
+
     get twitterBtn() {
         return new Button($('//a[contains(@aria-label,"Twitter")]'), 'Twitter button');
     }
@@ -24,7 +28,6 @@ class AboutPage extends BasePage {
 
     async open() {
         await super.open('about');
-        await super.closePopupBtn.click();
     }
 
     async openTwitter() {
@@ -44,7 +47,7 @@ class AboutPage extends BasePage {
 
     async openReddit() {
         await this.redditBtn.click();
-        await browser.switchWindow('reddit');
+        await browser.switchWindow('reddit.com');
     }
 
     async openPresskit() {

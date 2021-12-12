@@ -5,11 +5,10 @@ describe('SideMenu/AboutUs', () => {
         // about page
         await aboutPage.open();
 
-        await aboutPage.openReddit();
-        await browser.pause(3000);
+        await aboutPage.openReddit();        
 
         await expect(await browser.getUrl()).toMatch('https://www.reddit.com/r/owasp_juiceshop/');
         await expect($('//h1')).toBeExisting();
         await expect($('//h1')).toHaveTextContaining('owasp_juiceshop');
-    });  
+    });
 });
