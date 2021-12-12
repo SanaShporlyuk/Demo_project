@@ -16,4 +16,8 @@ export default class BaseElement {
     async isDisplayed() {
         return await this.wdioElement.isDisplayed();
     }
+
+    async waitForExist() {
+        return await this.wdioElement.waitForExist();
+    }
 }

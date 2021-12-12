@@ -9,10 +9,10 @@ describe('User login', () => {
         await mainPage.navigateToLogin();  
 
         // login page
-        await loginPage.login('sanasmitrc@gmail.com', 'test123');
-        await browser.pause(1000);
-        
+        await loginPage.login('sanasmitrc@gmail.com', 'test123');              
+        await mainPage.accountMenuBtn.waitForExist();
         await mainPage.openAccountMenu();
+        
         await expect($('//div[@id = "mat-menu-panel-0"]//button[1]/span')).toBeExisting();
         await expect($('//div[@id = "mat-menu-panel-0"]//button[1]/span')).toHaveTextContaining('sanasmitrc@gmail.com');
     });
