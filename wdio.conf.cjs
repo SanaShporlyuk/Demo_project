@@ -187,7 +187,7 @@ exports.config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {Object}         browser      instance of created browser/device session
      */
-    before: function (capabilities, specs, browser) {
+    before: function () {
         console.log(`Running in browser "${browser.browserName}"`);
         browser.setWindowSize(1658, 1420);
     },
