@@ -17,10 +17,7 @@ export default class BasePage {
 
     async waitForPageAvailable() {
         await browser.waitUntil(
-            async () => {
-                const elem = await this.baseElem;
-                return elem.isExisting() && elem.isDisplayed();
-            }
+            async () => await this.baseElem.waitForExist()
         );
     };
 
