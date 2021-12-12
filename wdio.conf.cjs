@@ -20,8 +20,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        //'./test/specs/**/about.reddit.e2e.js'
-        './test/specs/**/about.slack.e2e.js'
+        './test/specs/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -191,7 +190,7 @@ exports.config = {
     before: function (browser) {
         console.log(`Running in browser "${browser.browserName}"`);
         // browser.windowHandleSize({width:1280,height:800});
-        // browser.setWindowSize(1280, 300);
+        // browser.setWindowSize(1280, 800);
     },
     /**
      * Runs before a WebdriverIO command gets executed.
