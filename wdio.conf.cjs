@@ -20,7 +20,8 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        //'./test/specs/**/about.reddit.e2e.js'
+        './test/specs/**/about.slack.e2e.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -188,7 +189,9 @@ exports.config = {
      * @param {Object}         browser      instance of created browser/device session
      */
     before: function (browser) {
-        console.log(`WDIO Before: running in browser "${browser.browserName}"`);
+        console.log(`Running in browser "${browser.browserName}"`);
+        // browser.windowHandleSize({width:1280,height:800});
+        // browser.setWindowSize(1280, 300);
     },
     /**
      * Runs before a WebdriverIO command gets executed.

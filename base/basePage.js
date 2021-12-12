@@ -9,10 +9,10 @@ export default class BasePage {
 
     async open(page) {
         await browser.url(`${browser.options.baseUrl}/#/${page}`);
+        await this.waitForPageAvailable();
         if (await this.closePopupBtn.isExisting()) {
             await this.closePopupBtn.click();
         }
-        await this.waitForPageAvailable();
     };
 
     async waitForPageAvailable() {
