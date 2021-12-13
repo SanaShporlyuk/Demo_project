@@ -1,13 +1,16 @@
+import Chance from 'chance';
 import loginPage from "../../pages/login.page.js";
 import registrationPage from "../../pages/registration.page.js"
+const chance = new Chance();
 
 describe('Register User', () => {
     it('User does registration with valid credentials', async () => {
         // registration page
         await registrationPage.open();
 
-        // TODO: generate email
-        await registrationPage.emailInput.setValue('bla7@bla.com');
+        const email = chance.email();
+        await registrationPage.emailInput.setValue(email);
+        console.log(`Setting email: ${email}`);
         await registrationPage.passwordInput.setValue('blabla3#_');
         await registrationPage.passwordRepeat.setValue('blabla3#_');
 
