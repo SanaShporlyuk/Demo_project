@@ -11,7 +11,8 @@
         "@wdio/mocha-framework": "^7.16.6",
         "@wdio/selenium-standalone-service": "^7.16.6",
         "@wdio/spec-reporter": "^7.16.9",
-        "chance": "^1.1.8"
+        "chance": "^1.1.8",
+        "superagent": "^6.1.0"
     },
     "type": "module",
     "scripts": {
