@@ -1,7 +1,7 @@
-import Chance from 'chance';
-import registrationPage from "../../pages/registration.page.js"
 import mainPage from "../../pages/main.page.js"
 import loginPage from "../../pages/login.page.js"
+import Chance from 'chance';
+import superagent from "superagent";
 
 describe('User login', () => {
     const chance = new Chance();
@@ -9,14 +9,9 @@ describe('User login', () => {
     const password = 'blabla3#_';
 
     before(async () => {
-        await registrationPage.open();
-        await registrationPage.emailInput.setValue(email);
-        await registrationPage.passwordInput.setValue(password);
-        await registrationPage.passwordRepeat.setValue(password);
-        await registrationPage.questionDropdown.select(`Mother's maiden name?`);
-        await registrationPage.securityAnswer.setValue('blabla');
-        await registrationPage.registerButton.click();
-        await loginPage.waitForPageAvailable();
+        let request = { "email": email, "password": password, "passwordRepeat": password, "securityQuestion": { "id": 2, "question": "Mother's maiden name?", "createdAt": "2021-12-16T00:19:40.807Z", "updatedAt": "2021-12-16T00:19:40.807Z" }, "securityAnswer": "test" };
+        const response = await superagent.post(`${browser.options.baseUrl}/api/Users`, request);
+        expect(response.statusCode).toHaveValue(201);
     });
 
     it('User does login with valid credentials', async () => {
@@ -34,4 +29,3 @@ describe('User login', () => {
         await expect($('//div[@id = "mat-menu-panel-0"]//button[1]/span')).toHaveTextContaining(email);
     });
 });
-
