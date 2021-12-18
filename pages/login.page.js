@@ -30,11 +30,11 @@ class LoginPage extends BasePage {
     }
 
     async login(email, password) {
-        // await allure.addStep(`Logging in with ${email} / ${pass}`);
+        await allure.startStep(`Logging in with ${email} / ${pass}`);
         await this.emailInput.setValue(`${email}`);
         await this.passwordInput.setValue(`${password}`);
         await this.loginBtn.click();
-        // await allure.endStep(`passed`);
+        await allure.endStep(`passed`);
     }
 }
 
