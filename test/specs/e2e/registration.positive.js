@@ -10,14 +10,13 @@ describe("Registration", () => {
 
     const email = chance.email();
     await registrationPage.emailInput.setValue(email);
-    console.log(`Setting email: ${email}`);
     await registrationPage.passwordInput.setValue("blabla3#_");
     await registrationPage.passwordRepeat.setValue("blabla3#_");
 
     // TODO: find better way to wait for password animation
-    await browser.pause(100);
-    await registrationPage.questionDropdown.select(`Mother's maiden name?`);
-    await registrationPage.securityAnswer.setValue("blabla");
+    await browser.pause(200);
+    await registrationPage.questionDropdown.select("Mother's maiden name?");
+    await registrationPage.securityAnswer.setValue("blabla");    
 
     await registrationPage.registerButton.click();
 
