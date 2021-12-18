@@ -15,6 +15,7 @@ class MainPage extends BasePage {
   }
 
   async open() {
+    allure.addStep("Navigate to home");
     await super.open("");
   }
 
