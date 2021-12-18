@@ -7,6 +7,7 @@ export default class Dropdown extends BaseElement {
     }
 
     async close() {
+        await allure.addStep(`Close "${this.elementname}" dropdown`);
         await browser.keys(['Escape']);
     }
 
