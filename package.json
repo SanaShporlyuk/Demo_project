@@ -19,6 +19,7 @@
     },
     "type": "module",
     "scripts": {
-        "wdio": "wdio run wdio.conf.cjs"
+        "wdio": "wdio run wdio.conf.cjs",
+        "allure": "allure generate allure-results -o allure-report --clean"
     }
 }
