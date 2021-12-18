@@ -1,3 +1,4 @@
+import AllureReporter from '@wdio/allure-reporter';
 import BasePage from '../base/basePage.js'
 import Button from '../elements/button.js'
 import Input from '../elements/input.js'
@@ -8,15 +9,15 @@ class LoginPage extends BasePage {
     }
 
     get emailInput() {
-        return new Input($('#email'), 'Email input');
+        return new Input($('#email'), 'Email');
     }
 
     get passwordInput() {
-        return new Input($('#password'), 'Password input');
+        return new Input($('#password'), 'Password');
     }
 
     get loginBtn() {
-        return new Button($('#loginButton'), 'Login button');
+        return new Button($('#loginButton'), 'Login');
     }
 
     get error() {
@@ -24,13 +25,16 @@ class LoginPage extends BasePage {
     }
 
     async open() {
+        allure.addStep('Navigate to login');
         await super.open('login');
     }
 
     async login(email, password) {
+        // await allure.addStep(`Logging in with ${email} / ${pass}`);
         await this.emailInput.setValue(`${email}`);
         await this.passwordInput.setValue(`${password}`);
         await this.loginBtn.click();
+        // await allure.endStep(`passed`);
     }
 }
 

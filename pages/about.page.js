@@ -7,26 +7,27 @@ class AboutPage extends BasePage {
     }
 
     get twitterBtn() {
-        return new Button($('//a[contains(@aria-label,"Twitter")]'), 'Twitter button');
+        return new Button($('//a[contains(@aria-label,"Twitter")]'), 'Twitter');
     }
 
     get facebookBtn() {
-        return new Button($('//a[contains(@aria-label,"Facebook")]'), 'Facebook button');
+        return new Button($('//a[contains(@aria-label,"Facebook")]'), 'Facebook');
     }
 
     get slackBtn() {
-        return new Button($('//a[contains(@aria-label,"Slack")]'), 'Slack button');
+        return new Button($('//a[contains(@aria-label,"Slack")]'), 'Slack');
     }
 
     get redditBtn() {
-        return new Button($('//a[contains(@aria-label,"Reddit")]'), 'Reddit button');
+        return new Button($('//a[contains(@aria-label,"Reddit")]'), 'Reddit');
     }
 
     get presskitBtn() {
-        return new Button($('//a[contains(@aria-label,"PressKit")]'), 'PressKit button');
+        return new Button($('//a[contains(@aria-label,"PressKit")]'), 'PressKit');
     }
 
     async open() {
+        allure.addStep('Navigate to about');
         await super.open('about');
     }
 

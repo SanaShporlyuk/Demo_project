@@ -10,34 +10,35 @@ class RegistrationPage extends BasePage {
     }
 
     get emailInput() {
-        return new Input($('#emailControl'), 'Email input');
+        return new Input($('#emailControl'), 'Email');
     }
 
     get passwordInput() {
-        return new Input($('#passwordControl'), 'Password input');
+        return new Input($('#passwordControl'), 'Password');
     }
 
     get passwordRepeat() {
-        return new Input($('#repeatPasswordControl'), 'Repead password');
+        return new Input($('#repeatPasswordControl'), 'Repeat Password');
     }
 
     get passwordAdvice() {
-        return new Checkbox($('.mat-slide-toggle-bar'), "Show password advice checkbox");        
+        return new Checkbox($('.mat-slide-toggle-bar'), "Show Password Advice");
     }
 
     get questionDropdown() {
-        return new Dropdown($('[name="securityQuestion"]'), 'Security question');
+        return new Dropdown($('[name="securityQuestion"]'), 'Security Question');
     }
 
     get securityAnswer() {
-        return new Input($('#securityAnswerControl'), 'Security answer input');
-    }    
+        return new Input($('#securityAnswerControl'), 'Security Answer');
+    }
 
     get registerButton() {
-        return new Button($('#registerButton'), 'Register button');
+        return new Button($('#registerButton'), 'Register');
     }
 
     async open() {
+        allure.addStep('Navigate to registration');
         await super.open('register');
     }
 }

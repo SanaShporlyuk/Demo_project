@@ -14,6 +14,8 @@ describe('Register User', () => {
         await registrationPage.passwordInput.setValue('blabla3#_');
         await registrationPage.passwordRepeat.setValue('blabla3#_');
 
+        // TODO: find better way to wait for password animation
+        await browser.pause(100); 
         await registrationPage.questionDropdown.select(`Mother's maiden name?`);
         await registrationPage.securityAnswer.setValue('blabla');
 

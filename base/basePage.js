@@ -4,7 +4,7 @@ export default class BasePage {
     get baseElem() { }
 
     get closePopupBtn() {
-        return new Button($('button.close-dialog'), 'Dismiss popup');
+        return new Button($('button.close-dialog'), 'Dismiss Popup');
     };
 
     async open(page) {

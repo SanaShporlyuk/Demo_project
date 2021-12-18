@@ -7,11 +7,11 @@ class MainPage extends BasePage {
     }
 
     get accountMenuBtn() {
-        return new Button($('#navbarAccount'), 'Account menu');
+        return new Button($('#navbarAccount'), 'Account Menu');
     }
 
     get loginBtn() {
-        return new Button($('#navbarLoginButton'), 'Login button');
+        return new Button($('#navbarLoginButton'), 'Login');
     }
 
     async open() {
