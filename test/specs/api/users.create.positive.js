@@ -2,7 +2,7 @@ import Chance from "chance";
 import { expect } from "chai";
 import superagent from "superagent";
 
-describe("api/Users", () => {
+describe("api/users", () => {
   const chance = new Chance();
   const email = chance.email();
   const password = "blabla3#_";
