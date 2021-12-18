@@ -1,60 +1,60 @@
-import BasePage from '../base/basePage.js'
-import Button from '../elements/button.js'
+import BasePage from "../base/basePage.js";
+import Button from "../elements/button.js";
 
 class AboutPage extends BasePage {
-    get baseElem() {
-        return this.presskitBtn;
-    }
+  get baseElem() {
+    return this.presskitBtn;
+  }
 
-    get twitterBtn() {
-        return new Button($('//a[contains(@aria-label,"Twitter")]'), 'Twitter');
-    }
+  get twitterBtn() {
+    return new Button($('//a[contains(@aria-label,"Twitter")]'), "Twitter");
+  }
 
-    get facebookBtn() {
-        return new Button($('//a[contains(@aria-label,"Facebook")]'), 'Facebook');
-    }
+  get facebookBtn() {
+    return new Button($('//a[contains(@aria-label,"Facebook")]'), "Facebook");
+  }
 
-    get slackBtn() {
-        return new Button($('//a[contains(@aria-label,"Slack")]'), 'Slack');
-    }
+  get slackBtn() {
+    return new Button($('//a[contains(@aria-label,"Slack")]'), "Slack");
+  }
 
-    get redditBtn() {
-        return new Button($('//a[contains(@aria-label,"Reddit")]'), 'Reddit');
-    }
+  get redditBtn() {
+    return new Button($('//a[contains(@aria-label,"Reddit")]'), "Reddit");
+  }
 
-    get presskitBtn() {
-        return new Button($('//a[contains(@aria-label,"PressKit")]'), 'PressKit');
-    }
+  get presskitBtn() {
+    return new Button($('//a[contains(@aria-label,"PressKit")]'), "PressKit");
+  }
 
-    async open() {
-        allure.addStep('Navigate to about');
-        await super.open('about');
-    }
+  async open() {
+    allure.addStep("Navigate to about");
+    await super.open("about");
+  }
 
-    async openTwitter() {
-        await this.twitterBtn.click();
-        await browser.switchWindow('twitter');
-    }
+  async openTwitter() {
+    await this.twitterBtn.click();
+    await browser.switchWindow("twitter");
+  }
 
-    async openFacebook() {
-        await this.facebookBtn.click();
-        await browser.switchWindow('facebook');
-    }
+  async openFacebook() {
+    await this.facebookBtn.click();
+    await browser.switchWindow("facebook");
+  }
 
-    async openSlack() {
-        await this.slackBtn.click();
-        await browser.switchWindow('slack');
-    }
+  async openSlack() {
+    await this.slackBtn.click();
+    await browser.switchWindow("slack");
+  }
 
-    async openReddit() {
-        await this.redditBtn.click();
-        await browser.switchWindow('reddit.com');
-    }
+  async openReddit() {
+    await this.redditBtn.click();
+    await browser.switchWindow("reddit.com");
+  }
 
-    async openPresskit() {
-        await this.presskitBtn.click();
-        await browser.switchWindow('github');
-    }
+  async openPresskit() {
+    await this.presskitBtn.click();
+    await browser.switchWindow("github");
+  }
 }
 
 export default new AboutPage();
