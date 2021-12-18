@@ -1,5 +1,4 @@
 import BaseElement from '../base/baseElement.js';
-import Button from './button.js';
 
 export default class Dropdown extends BaseElement {
     async open() {
