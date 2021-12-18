@@ -1,6 +1,6 @@
 import registrationPage from "../../pages/registration.page.js"
 
-describe('Register User', () => {
+describe('Registration', () => {
     it('User does not enter any inputs on registration page', async () => {
         // registration page
         await registrationPage.open();

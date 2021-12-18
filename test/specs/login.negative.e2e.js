@@ -1,7 +1,7 @@
 import mainPage from "../../pages/main.page.js"
 import loginPage from "../../pages/login.page.js"
 
-describe('User Login', () => {
+describe('Login', () => {
     it('User does not exist', async () => {
         // main page
         await mainPage.open();

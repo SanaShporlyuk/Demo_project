@@ -3,7 +3,7 @@ import loginPage from "../../pages/login.page.js"
 import Chance from 'chance';
 import superagent from "superagent";
 
-describe('User Login', () => {
+describe('Login', () => {
     const chance = new Chance();
     const email = chance.email();
     const password = 'blabla3#_';
