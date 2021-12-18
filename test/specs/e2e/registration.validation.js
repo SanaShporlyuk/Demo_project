@@ -1,4 +1,4 @@
-import registrationPage from "../../pages/registration.page.js";
+import registrationPage from "../../../pages/registration.page.js";
 
 describe("Registration", () => {
   it("User does not enter any inputs on registration page", async () => {

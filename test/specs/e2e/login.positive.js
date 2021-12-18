@@ -1,5 +1,5 @@
-import mainPage from "../../pages/main.page.js";
-import loginPage from "../../pages/login.page.js";
+import mainPage from "../../../pages/main.page.js";
+import loginPage from "../../../pages/login.page.js";
 import Chance from "chance";
 import superagent from "superagent";
 

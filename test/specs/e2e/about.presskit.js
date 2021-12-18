@@ -1,4 +1,4 @@
-import aboutPage from "../../pages/about.page.js";
+import aboutPage from "../../../pages/about.page.js";
 
 describe("SideMenu/AboutUs", () => {
   it("Verify Press Kit button", async () => {

@@ -1,6 +1,6 @@
 import Chance from "chance";
-import loginPage from "../../pages/login.page.js";
-import registrationPage from "../../pages/registration.page.js";
+import loginPage from "../../../pages/login.page.js";
+import registrationPage from "../../../pages/registration.page.js";
 const chance = new Chance();
 
 describe("Registration", () => {
