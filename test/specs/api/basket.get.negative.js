@@ -1,16 +1,11 @@
-// http://localhost:3000/rest/basket/21
-
 import { expect } from "chai";
-import superagent from "superagent";
+import BaseAPI from "../../../base/baseAPI.js";
 
 describe("rest/basket", () => {
+  let api = new BaseAPI();
+
   it("Unauthorized to view basket", async () => {
-    await superagent.get(
-      `${browser.options.baseUrl}/rest/basket/123`,
-    ).then(success => {
-      throw `Unexpected response: ${success}`;
-    }).catch(error => {
-      expect(error.response.statusCode).to.equal(401)
-    });
+    let response = await api.GET("rest/basket/123");
+    expect(response.statusCode).to.equal(401);
   });
 });
