@@ -33,27 +33,27 @@ class AboutPage extends BasePage {
 
   async openTwitter() {
     await this.twitterBtn.click();
-    await browser.switchWindow("twitter");
+    await super.switchToAnotherWindow();
   }
 
   async openFacebook() {
     await this.facebookBtn.click();
-    await browser.switchWindow("facebook");
+    await super.switchToAnotherWindow();
   }
 
   async openSlack() {
     await this.slackBtn.click();
-    await browser.switchWindow("slack");
+    await super.switchToAnotherWindow();
   }
 
   async openReddit() {
-    await this.redditBtn.click();
-    await browser.switchWindow("reddit.com");
+    await this.redditBtn.click();     
+    await super.switchToAnotherWindow();
   }
 
   async openPresskit() {
     await this.presskitBtn.click();
-    await browser.switchWindow("github");
+    await super.switchToAnotherWindow();
   }
 }
 

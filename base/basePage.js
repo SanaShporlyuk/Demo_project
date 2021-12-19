@@ -31,4 +31,14 @@ export default class BasePage {
     await browser.switchToWindow(currentWindow);
     throw new Error(`Window with title "${windowTitle}" was not found`);
   }
+
+  async switchToAnotherWindow() {
+    let currentWindow = await browser.getWindowHandle();
+    for (let handle of await browser.getWindowHandles()) {      
+      if (handle != currentWindow) {
+        return await browser.switchToWindow(handle);
+      }
+    }
+    throw new Error(`No other windows were found`);
+  }  
 }
