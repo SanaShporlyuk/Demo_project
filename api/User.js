@@ -27,6 +27,10 @@ export default class User extends BaseAPI {
 
   async GetBasket() {
     allure.addStep("Call user GetBasket");
-    return await super.AuthGET(`rest/basket/${this.bid}`, this.token);
+    if (this.token) {
+      return await super.AuthGET(`rest/basket/${this.bid}`, this.token);
+    } else {
+      return await super.GET(`rest/basket/${this.bid}`);
+    }
   }
 }

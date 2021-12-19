@@ -31,7 +31,7 @@ exports.config = {
       e2e: [
           './test/specs/e2e/**/*.js'
       ]
-    }, 
+    },    
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -69,11 +69,12 @@ exports.config = {
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
-    }, {
-        maxInstances: 5,
-        browserName: 'firefox',
-        acceptInsecureCerts: true
     }],
+    // }, {
+    //     maxInstances: 5,
+    //     browserName: 'firefox',
+    //     acceptInsecureCerts: true
+    // }],
     // ===================
     // Test Configurations
     // ===================
