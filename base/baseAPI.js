@@ -1,37 +1,37 @@
 import superagent from "superagent";
 
 export default class BaseAPI {
-  async GET(url) {
+  async GET(path) {
     try {
-      allure.addStep(`GET to ${browser.options.baseUrl}/${url}`);
-      return await superagent.get(`${browser.options.baseUrl}/${url}`);
+      allure.addStep(`GET to ${browser.options.baseUrl}/${path}`);
+      return await superagent.get(`${browser.options.baseUrl}/${path}`);
     } catch (error) {
       return error.response;
     }
   }
 
-  async POST(url, body) {
+  async POST(path, body) {
     try {
-      allure.addStep(`POST to ${browser.options.baseUrl}/${url} with ${JSON.stringify(body)}`);
-      return await superagent.post(`${browser.options.baseUrl}/${url}`, body);
+      allure.addStep(`POST to ${browser.options.baseUrl}/${path} with ${JSON.stringify(body)}`);
+      return await superagent.post(`${browser.options.baseUrl}/${path}`, body);
     } catch (error) {
       return error.response;
     }
   }
 
-  async AuthGET(url, token) {
+  async AuthGET(path, token) {
     try {
-      allure.addStep(`Authorized GET to ${browser.options.baseUrl}/${url}`);
-      return await superagent.get(`${browser.options.baseUrl}/${url}`).set("Authorization", `Bearer ${token}`);
+      allure.addStep(`Authorized GET to ${browser.options.baseUrl}/${path}`);
+      return await superagent.get(`${browser.options.baseUrl}/${path}`).set("Authorization", `Bearer ${token}`);
     } catch (error) {
       return error.response;
     }
   }
 
-  async AuthPOST(url, body, token) {
+  async AuthPOST(path, body, token) {
     try {
-      allure.addStep(`Authorized POST to ${browser.options.baseUrl}/${url} with ${JSON.stringify(body)}`);
-      return await superagent.post(`${browser.options.baseUrl}/${url}`, body).set("Authorization", `Bearer ${token}`);
+      allure.addStep(`Authorized POST to ${browser.options.baseUrl}/${path} with ${JSON.stringify(body)}`);
+      return await superagent.post(`${browser.options.baseUrl}/${path}`, body).set("Authorization", `Bearer ${token}`);
     } catch (error) {
       return error.response;
     }
