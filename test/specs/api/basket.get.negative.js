@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import BaseAPI from "../../../base/baseAPI.js";
 
-describe("rest/basket", () => {
+describe("API rest/basket", () => {
   let api = new BaseAPI();
 
   it("Unauthorized to view basket", async () => {
