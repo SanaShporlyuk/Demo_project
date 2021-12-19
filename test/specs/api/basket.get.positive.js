@@ -1,35 +1,25 @@
 import Chance from "chance";
 import { expect } from "chai";
-import superagent from "superagent";
+import User from "../../../api/User.js";
 
-describe("rest/basket", () => {
+describe("API rest/basket", () => {
+  const user = new User();
   const chance = new Chance();
   const email = chance.email();
   const password = "blabla3#_";
 
-  it("Login with new user", async () => {
+  it("Authorized get basket", async () => {
     let request = {
       email: email,
       password: password
     };
-    let response = await superagent.post(
-      `${browser.options.baseUrl}/api/Users`,
-      request
-    );
+    let response = await user.Create(request);
     expect(response.statusCode).to.equal(201);
 
-    response = await superagent.post(
-      `${browser.options.baseUrl}/rest/user/login`,
-      request
-    );
+    response = await user.Login(email, password);
     expect(response.statusCode).to.equal(200);
-    expect(response.body.authentication.umail).to.equal(email);
 
-    let bid = response.body.authentication.bid;
-    let token = response.body.authentication.token;
-    response = await superagent.get(
-      `${browser.options.baseUrl}/rest/basket/${bid}`
-    ).set("Authorization", `Bearer ${token}`);
+    response = await user.GetBasket();
     expect(response.statusCode).to.equal(200);
   });
 });
