@@ -7,12 +7,8 @@ describe("SideMenu/AboutUs", () => {
 
     await aboutPage.openPresskit();
 
-    await expect(await browser.getUrl()).toMatch(
-      "https://github.com/OWASP/owasp-swag"
-    );
+    await expect(await browser.getUrl()).toMatch("https://github.com/OWASP/owasp-swag");
     await expect($('//strong[@itemprop="name"]')).toBeExisting();
-    await expect($('//strong[@itemprop="name"]')).toHaveTextContaining(
-      "owasp-swag"
-    );
+    await expect($('//strong[@itemprop="name"]')).toHaveTextContaining("owasp-swag");
   });
 });

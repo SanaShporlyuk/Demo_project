@@ -7,9 +7,7 @@ describe("SideMenu/AboutUs", () => {
 
     await aboutPage.openReddit();
 
-    await expect(await browser.getUrl()).toMatch(
-      "https://www.reddit.com/r/owasp_juiceshop/"
-    );
+    await expect(await browser.getUrl()).toMatch("https://www.reddit.com/r/owasp_juiceshop/");
     await expect($("//h1")).toBeExisting();
     await expect($("//h1")).toHaveTextContaining("owasp_juiceshop");
   });

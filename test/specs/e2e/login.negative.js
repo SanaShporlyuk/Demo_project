@@ -12,8 +12,6 @@ describe("Login", () => {
     await loginPage.login("user_not_exists@gmail.com", "Done_demo@");
 
     // assert
-    await expect(loginPage.error).toHaveTextContaining(
-      "Invalid email or password"
-    );
+    await expect(loginPage.error).toHaveTextContaining("Invalid email or password");
   });
 });

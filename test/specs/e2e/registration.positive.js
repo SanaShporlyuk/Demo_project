@@ -16,13 +16,11 @@ describe("Registration", () => {
     // TODO: find better way to wait for password animation
     await browser.pause(200);
     await registrationPage.questionDropdown.select("Mother's maiden name?");
-    await registrationPage.securityAnswer.setValue("blabla");    
+    await registrationPage.securityAnswer.setValue("blabla");
 
     await registrationPage.registerButton.click();
 
     await loginPage.waitForPageAvailable();
-    await expect(await browser.getUrl()).toMatch(
-      `${browser.options.baseUrl}/#/login`
-    );
+    await expect(await browser.getUrl()).toMatch(`${browser.options.baseUrl}/#/login`);
   });
 });

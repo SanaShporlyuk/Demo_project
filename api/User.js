@@ -10,7 +10,7 @@ export default class User extends BaseAPI {
     await allure.startStep(`Login with ${email} / ${password}`);
     let body = {
       email: email,
-      password: password
+      password: password,
     };
     let response = await super.POST("rest/user/login", body);
     if (response.statusCode === 200) {

@@ -21,10 +21,7 @@ describe("Login", () => {
       },
       securityAnswer: "test",
     };
-    const response = await superagent.post(
-      `${browser.options.baseUrl}/api/Users`,
-      request
-    );
+    const response = await superagent.post(`${browser.options.baseUrl}/api/Users`, request);
     expect(response.statusCode).toHaveValue(201);
   });
 
@@ -39,11 +36,7 @@ describe("Login", () => {
     await mainPage.accountMenuBtn.waitForExist();
     await mainPage.openAccountMenu();
 
-    await expect(
-      $('//div[@id = "mat-menu-panel-0"]//button[1]/span')
-    ).toBeExisting();
-    await expect(
-      $('//div[@id = "mat-menu-panel-0"]//button[1]/span')
-    ).toHaveTextContaining(email);
+    await expect($('//div[@id = "mat-menu-panel-0"]//button[1]/span')).toBeExisting();
+    await expect($('//div[@id = "mat-menu-panel-0"]//button[1]/span')).toHaveTextContaining(email);
   });
 });

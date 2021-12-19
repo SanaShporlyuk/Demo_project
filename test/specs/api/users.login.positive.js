@@ -11,7 +11,7 @@ describe("API api/users", () => {
   it("Login with new user", async () => {
     let request = {
       email: email,
-      password: password
+      password: password,
     };
     let response = await user.Create(request);
     expect(response.statusCode).to.equal(201);

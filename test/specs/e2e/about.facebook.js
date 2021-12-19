@@ -7,18 +7,12 @@ describe("SideMenu/AboutUs", () => {
 
     await aboutPage.openFacebook();
 
-    await expect(await browser.getUrl()).toMatch(
-      "https://www.facebook.com/owasp.juiceshop"
-    );
+    await expect(await browser.getUrl()).toMatch("https://www.facebook.com/owasp.juiceshop");
     await expect(
-      $(
-        '//a[@ href = "https://www.facebook.com/owasp.juiceshop/"]/span[contains(text(), "OWASP Juice Shop")]'
-      )
+      $('//a[@ href = "https://www.facebook.com/owasp.juiceshop/"]/span[contains(text(), "OWASP Juice Shop")]')
     ).toBeExisting();
     await expect(
-      $(
-        '//a[@ href = "https://www.facebook.com/owasp.juiceshop/"]/span[contains(text(), "OWASP Juice Shop")]'
-      )
+      $('//a[@ href = "https://www.facebook.com/owasp.juiceshop/"]/span[contains(text(), "OWASP Juice Shop")]')
     ).toHaveTextContaining("OWASP Juice Shop");
   });
 });

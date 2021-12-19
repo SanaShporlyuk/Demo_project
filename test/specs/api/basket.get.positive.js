@@ -11,7 +11,7 @@ describe("API rest/basket", () => {
   it("Authorized get basket", async () => {
     let request = {
       email: email,
-      password: password
+      password: password,
     };
     let response = await user.Create(request);
     expect(response.statusCode).to.equal(201);

@@ -35,5 +35,5 @@ export default class BaseAPI {
     } catch (error) {
       return error.response;
     }
-  }  
+  }
 }
