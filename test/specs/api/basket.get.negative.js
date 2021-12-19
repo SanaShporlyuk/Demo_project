@@ -1,11 +1,12 @@
 import { expect } from "chai";
-import BaseAPI from "../../../base/baseAPI.js";
+import User from "../../../api/User.js";
 
 describe("API rest/basket", () => {
-  let api = new BaseAPI();
+  const user = new User();
 
-  it("Unauthorized to view basket", async () => {
-    let response = await api.GET("rest/basket/123");
+  it("Unauthorized to view basket", async () => {    
+    user.bid = 123;
+    let response = await user.GetBasket();
     expect(response.statusCode).to.equal(401);
   });
 });

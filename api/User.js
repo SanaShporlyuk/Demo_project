@@ -1,8 +1,12 @@
 import BaseAPI from "../base/baseAPI.js";
 
 export default class User extends BaseAPI {
-  async Create(body) {
-    allure.addStep("Call create user API");
+  async Create(email, password) {
+    allure.addStep("Call user create");
+    let body = {
+      email: email,
+      password: password,
+    };    
     return await super.POST("api/Users", body);
   }
 
@@ -22,7 +26,7 @@ export default class User extends BaseAPI {
   }
 
   async GetBasket() {
-    allure.addStep("Call get basket for authenticated user");
+    allure.addStep("Call user GetBasket");
     return await super.AuthGET(`rest/basket/${this.bid}`, this.token);
   }
 }
