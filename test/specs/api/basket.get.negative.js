@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import User from "../../../api/User.js";
+import User from "../../../api/user.js";
 
 describe("API rest/basket", () => {
   const user = new User();
