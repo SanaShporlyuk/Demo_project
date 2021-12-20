@@ -1,4 +1,3 @@
-import AllureReporter from "@wdio/allure-reporter";
 import BasePage from "../base/basePage.js";
 import Button from "../elements/button.js";
 import Input from "../elements/input.js";
