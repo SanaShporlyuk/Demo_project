@@ -10,9 +10,9 @@ describe("API api/users", () => {
 
   it("Create user with the same email", async () => {
     let response = await user.Create(email, password);
-    expect(response.statusCode).to.equal(201);
+    expect(response.statusCode).to.equal(201); // created
 
     response = await user.Create(email, password);
-    expect(response.statusCode).to.equal(400);
+    expect(response.statusCode).to.equal(400); // bad request
   });
 });

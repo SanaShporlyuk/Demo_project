@@ -28,7 +28,7 @@ describe("Purchase flow", () => {
     await expect($('//mat-row')).toBeExisting();
     await basketPage.checkoutBtn.click();
 
-    await expect(await browser.getUrl()).toMatch(`${browser.options.baseUrl}/#/address/select`);
+    await expect(await browser.getUrl()).toMatch(`${browser.options.baseUrl}/#/address/select`);    
   });
 });
 

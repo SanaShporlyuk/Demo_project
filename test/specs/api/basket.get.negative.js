@@ -7,6 +7,6 @@ describe("API rest/basket", () => {
   it("Unauthorized to view basket", async () => {    
     user.bid = 123;
     let response = await user.GetBasket();
-    expect(response.statusCode).to.equal(401);
+    expect(response.statusCode).to.equal(401); // unauthorised
   });
 });
