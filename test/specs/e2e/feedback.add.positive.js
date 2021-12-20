@@ -31,6 +31,6 @@ describe("Feedback flow", () => {
     await feedbackPage.captchaInput.setValue(captcha_result);
     await feedbackPage.submitBtn.click();
 
-    expect($('//span[contains(text(),"Thank you for your feedback.")]')).toBeDisplayed();
+    await expect($('//span[contains(text(),"Thank you for your feedback.")]')).toBeDisplayed();    
   });
 });

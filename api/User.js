@@ -6,7 +6,7 @@ export default class User extends BaseAPI {
     let body = {
       email: email,
       password: password,
-    };    
+    };
     return await super.POST("api/Users", body);
   }
 
