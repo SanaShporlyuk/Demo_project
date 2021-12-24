@@ -1,11 +1,16 @@
 {
+<<<<<<< HEAD
     "name": "MyFirstApp",
+=======
+    "name": "myfirstapp",
+>>>>>>> 895e8e7514a2032b7e4ed72b2a0fe3f2c69bab10
     "version": "1.0.0",
     "description": "demo",
     "author": "",
     "license": "ISC",
     "dependencies": {},
     "devDependencies": {
+<<<<<<< HEAD
         "chai": "^4.3.4",
         "chance": "^1.1.8",
         "line-reader": "^0.4.0",
@@ -14,5 +19,24 @@
     "type": "module",
     "scripts": {
         "test": "mocha"
+=======
+        "@wdio/allure-reporter": "^7.16.11",
+        "@wdio/cli": "^7.16.10",
+        "@wdio/local-runner": "^7.16.10",
+        "@wdio/mocha-framework": "^7.16.6",
+        "@wdio/selenium-standalone-service": "^7.16.6",
+        "@wdio/spec-reporter": "^7.16.9",
+        "allure-commandline": "^2.17.2",
+        "chai": "^4.3.4",
+        "chance": "^1.1.8",
+        "superagent": "^6.1.0"
+    },
+    "type": "module",
+    "scripts": {
+        "wdio": "wdio run wdio.conf.cjs",
+        "chrome": "wdio run wdio.chrome.conf.cjs",
+        "firefox": "wdio run wdio.firefox.conf.cjs",
+        "allure": "allure generate allure-results -o allure-report --clean"
+>>>>>>> 895e8e7514a2032b7e4ed72b2a0fe3f2c69bab10
     }
 }
